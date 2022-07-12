@@ -1,3 +1,4 @@
+
 const getRegister = (req, res) => {
   res.send("get register");
 };
