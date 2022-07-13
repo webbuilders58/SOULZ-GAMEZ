@@ -10,4 +10,7 @@ router.get("/", loginPage.getLogin);
 
 router.post("/", loginPage.postLogin);
 
+// router.get("/auth/google", loginPage.googleLogin)
+
+
 module.exports = router;
