@@ -1,16 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const loginPage = require("../controllers/loginPage.js")
+
 
 router.use((req, res, next) => {
   next();
 });
 
-router.get("/", loginPage.getLogin);
+router.get("/",  (req, res) => {
+  res.render("login")
 
-router.post("/", loginPage.postLogin);
+});
 
-// router.get("/auth/google", loginPage.googleLogin)
+router.post("/", (req, res) => {
+  res.send("post login");
+});
+
 
 
 module.exports = router;
