@@ -8,11 +8,11 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: process.env.CALLBACK_URL,
       passReqToCallback: true,
     },
     function (request, accessToken, refreshToken, profile, done) {
-      console.log(profile.emails[0].value);
+      // console.log(profile.emails[0].value);
       User.findOrCreate(
         { googleId: profile.id, username: profile.displayName,email:profile.emails[0].value},
         function (err, user) {
