@@ -1,0 +1,102 @@
+<!-- Created by Midun-->
+<%- include('partials/header') %>
+<title>Register</title>
+  <div class="min-h-screen bg-gray-100 flex flex-col justify-center sm:py-12">
+    <div class="text-center whitespace-nowrap py-4 font-normal text-lg text-gray-500">Signup</div>
+    <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md">
+      <% if(message){ %>
+
+        <div id="remove" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+          role="alert">
+          <!-- <strong class="font-bold">Holy smokes!</strong> -->
+          <span class="block sm:inline"><%- message %></span>
+          <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+            <svg onclick="document.getElementById('remove').remove()" class="fill-current h-6 w-6 text-red-500"
+              role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <title>Close</title>
+              <path
+                d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+            </svg>
+          </span>
+        </div>
+
+
+        <%} %>
+      <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
+        <div class="px-5 py-7">
+          <form action="/register" method="POST">
+            <label class="font-semibold text-sm text-gray-600 pb-1 block" for="username">Name</label>
+            <input type="text" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" name="username" required />
+            <label class="font-semibold text-sm text-gray-600 pb-1 block" for="email">E-mail</label>
+            <input type="text" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" name="email" required />
+            <!-- <label class="font-semibold text-sm text-gray-600 pb-1 block" for="phoneNumber">Phone number</label>
+            <input type="tel" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" name="phoneNumber"
+              required /> -->
+            <!-- <label class="font-semibold text-sm text-gray-600 pb-1 block">Free Fire Id</label>
+              <input type="text" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" /> -->
+            <label class="font-semibold text-sm text-gray-600 pb-1 block" for="password">Password</label>
+            <input type="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" name="password"
+              required />
+            <button type="submit"
+              class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 text-white w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-semibold text-center inline-block">
+              <span class="inline-block mr-2">Signup</span>
+            </button>
+          </form>
+        </div>
+        <div class="p-5">
+          <div class="grid grid-cols-1 gap-1">
+            <i class="fa-brands fa-google"></i>
+            <!-- <button type="button" class="transition duration-200 border border-gray-200 text-gray-500 w-full py-2.5 rounded-lg text-sm shadow-sm hover:shadow-md font-normal text-center inline-block">
+                      <span class="inline-block mr-2">Continue with Google</span>
+                    </button> -->
+            <a href="auth/google">
+              <button
+                class="flex items-center justify-center w-full px-4 py-2 text-sm text-white text-gray-700 border border-gray-300 rounded-lg hover:border-gray-500 focus:border-gray-500">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-4 h-4 mr-2"
+                  viewBox="0 0 48 48">
+                  <defs>
+                    <path id="a"
+                      d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z" />
+                  </defs>
+                  <clipPath id="b">
+                    <use xlink:href="#a" overflow="visible" />
+                  </clipPath>
+                  <path clip-path="url(#b)" fill="#FBBC05" d="M0 37V11l17 13z" />
+                  <path clip-path="url(#b)" fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z" />
+                  <path clip-path="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z" />
+                  <path clip-path="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z" />
+                </svg>Google
+              </button></a>
+          </div>
+        </div>
+        <div class="py-5">
+          <div class="grid grid-cols-2 gap-1">
+            <div class="text-center sm:text-left whitespace-nowrap">
+              <button
+                class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  class="w-4 h-4 inline-block align-text-top">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                </svg>
+                <span class="inline-block ml-1">Forgot Password</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-5">
+        <div class="grid grid-cols-2 gap-1">
+          <div class="text-center sm:text-left whitespace-nowrap">
+            <p
+              class="transition duration-200 mx-5 px-5 py-4 cursor-pointer font-normal text-sm rounded-lg text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-200 focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 ring-inset">
+              Already have an account
+              <a href="/login" class="text-blue-500">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
