@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-// const cors = require("cors");
 const mongoose = require("mongoose");
 const loginRoute = require("./routes/login.js");
 const registerRoute = require("./routes/register.js");
@@ -16,7 +15,6 @@ require("./auth.js");
 const User = require("./database.js");
 
 const app = express();
-// app.use(express.bodyParser());
 
 app.set("view engine", "ejs");
 app.set("views", "../frontend/views");
